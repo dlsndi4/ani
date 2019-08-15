@@ -1,0 +1,115 @@
+
+@keyframes scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 200px 200px;
+  }
+}
+
+
+
+body,ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+   list-style-type: none;
+}
+
+body{
+  background-color: #222;
+  color: white;
+}
+
+.clearfix:after{
+  content:'';
+  display: block;
+  clear:both;
+}
+.wrapper{
+  background-color: white;
+  width: 960px;
+  margin: 100px auto;
+}
+
+.monster{
+  background-color: #674287;
+}
+.monster-item {
+   float: left;
+   width: 33.3333333%;
+   height: 650px;
+   position: relative;
+   line-height: 790px;
+   font-size: 0;
+   font-family: 'Kaushan Script', cursive;
+   transition: all 0.8s;
+   animation-name: scroll;
+   animation-duration: 1.5s;
+   animation-iteration-count: infinite;
+   animation-direction: reverse;
+   animation-timing-function: linear;
+   animation-play-state: paused;
+}
+
+
+.monster-item h2 {
+  padding: 0 0.5em;
+  transition: all 1s;
+  font-size: 0;
+  opacity: 0;
+}
+.monster:hover .monster-item {
+   width:20%;
+}
+.monster .monster-item:hover {
+  width:60%;
+  animation-play-state: running;
+  font-size: 6rem
+}
+
+.monster .monster-item:hover h2 {
+  opacity: 1;
+  font-size: 4rem
+}
+.monster-item-cover {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transition: transform 0.5s;
+  transform: translate(-50%,-50%) rotate(0) scale(0.6);
+}
+
+.monster-item:hover .monster-item-cover {
+
+}
+
+.monster-item.water {
+  background-color: #008d17;
+  text-align: right;
+  background-image: url(water-bg.png);
+}
+
+.monster-item.fire {
+  background-color: #8a0600;
+  text-align: center;
+  background-image: url(fire-bg.png);
+}
+
+.monster-item.cherry {
+  background-color: #674287;
+  text-align: left;
+  background-image: url(cherry-bg.png);
+}
+.monster-item.water:hover .monster-item-cover {
+  transform: translate(-120%,-60%)rotate(10deg)scale(1);
+}
+.monster-item.fire:hover .monster-item-cover {
+  transform: translate(-50%,-52%)rotate(360deg)scale(1);
+}
+.monster-item.cherry:hover .monster-item-cover {
+  transform: translate(10%,-60%)rotate(-15deg)scale(1);
+}
